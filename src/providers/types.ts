@@ -6,3 +6,8 @@ export interface IRoute {
   path: string;
   Component: React.FC;
 }
+
+export interface IMenu {
+  path: string;
+  title: string;
+}
