@@ -1,21 +1,21 @@
 import React from "react";
+import routes from "routes";
 // styles
 import "./App.css";
 // Components
 import Layout from "layout/Layout";
-import { Route, Routes } from "react-router-dom";
-import routes from "routes";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        {routes.map((el) => {
-          return (
-            <Route path={el.path} element={el.Component as React.ReactNode} />
-          );
-        })}
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          {routes.map(({ path, Component }) => (
+            <Route key={path} path={path} element={<Component />} />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </Layout>
   );
 }

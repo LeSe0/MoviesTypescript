@@ -4,9 +4,9 @@ import React from "react";
 import { Stack } from "@mui/material";
 import { Header, Footer } from "components/layout";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
 export default function Layout({ children }: Props) {
   return (

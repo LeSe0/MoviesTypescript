@@ -3,6 +3,8 @@ import React from "react";
 
 type Props = {};
 
-export default function Main({}: Props) {
-  return <div>Main</div>;
+const Main: React.FC<Props> = function Main({}) {
+  return <div>Mainadsdad</div>;
 }
+
+export default Main;
