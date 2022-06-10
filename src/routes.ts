@@ -1,6 +1,7 @@
+import { IRoute } from './providers/types';
 // Components
-import Main from "pages/Main";
-import { IRoute } from "providers/types";
+
+import Main from "./pages/Main";
 
 const routes: IRoute[] = [
   {

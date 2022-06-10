@@ -1,11 +1,11 @@
 import React from "react";
-import routes from "routes";
-import theme from "providers/theme";
+import routes from "./routes";
+import theme from "./providers/theme";
 // styles
 import "./App.css";
 // Components
-import Layout from "layout/Layout";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 
 function App() {

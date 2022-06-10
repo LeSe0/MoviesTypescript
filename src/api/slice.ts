@@ -1,11 +1,11 @@
 import axios, { AxiosError, AxiosResponse, Method } from "axios";
-import { ResponseModel } from "../src/providers/types";
+import { ResponseModel } from "../providers/types";
 
-const HOST = "https://api.themoviedb.org";
+const HOST = "https://api.themoviedb.org/3";
 const API_KEY = "35fa4249985d61836134bfb1e1ef357c";
 
 export default class ApiSlice {
-  static baseURL = `${HOST}/3`;
+  static baseURL = HOST;
   static defaultAuth = false;
 
   static async request<T>(

@@ -3,9 +3,7 @@ import React from "react";
 // Components
 import { Box } from "@mui/material";
 
-type Props = {};
-
-const Main: React.FC<Props> = function Main({}) {
+const Main: React.FC = function Main() {
   return (
     <Box
       sx={{

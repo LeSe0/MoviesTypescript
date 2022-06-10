@@ -2,7 +2,7 @@
 import React from "react";
 // Components
 import { Stack } from "@mui/material";
-import { Header, Footer } from "components/layout";
+import { Footer, Header } from "src/components/layout";
 
 interface Props {
   children: React.ReactNode;

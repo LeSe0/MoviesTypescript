@@ -1,7 +1,7 @@
 // React
 import React from "react";
-import { IMenu } from "providers/types";
-import { Box, Grid, Typography } from "@mui/material";
+import { IMenu } from "src/providers/types";
+import { Grid, Typography } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 interface Props {
@@ -12,10 +12,10 @@ export default function DesktopMenu({ menuData }: Props) {
   const location = useLocation();
 
   return (
-    <Grid container>
+    <Grid container display={{ xs: "none", md: "flex" }}>
       {menuData.map(({ title, path }, i) => {
         return (
-          <Grid item ml={i != 0 ? "15px" : "0px"}>
+          <Grid item ml="25px" key={"desktopMenuNavigation" + path}>
             <Link
               to={path}
               style={{
@@ -24,9 +24,14 @@ export default function DesktopMenu({ menuData }: Props) {
             >
               <Typography
                 sx={{
-                  color: location.pathname == path ? "#dc2a22" : "white",
-                  fontSize: "19px",
-                  fontWeight: "semibold",
+                  color: location.pathname === path ? "#dc2a22" : "white",
+                  fontSize: { md: "16px", lg: "19px" },
+                  fontWeight: "600",
+                  transition : "0.5s",
+                  '&:hover' : {
+                    color :"#dc2a22",
+                    transition : "0.5s"
+                  }
                 }}
               >
                 {title}

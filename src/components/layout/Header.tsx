@@ -1,12 +1,11 @@
 // React
 import React from "react";
-import { IMenu } from "providers/types";
+import { IMenu } from "src/providers/types";
+import { useGetMovieInfo } from "src/hooks/api/movie";
 // Components
 import { Grid, Typography } from "@mui/material";
-import DesktopMenu from "components/header/menu/DesktopMenu";
-import MobileMenu from "components/header/menu/MobileMenu";
-
-type Props = {};
+import { DesktopMenu, MobileMenu } from "src/components/header/menu";
+import Search from "src/components/header/Search";
 
 const menu: IMenu[] = [
   {
@@ -17,23 +16,28 @@ const menu: IMenu[] = [
     path: "/latest",
     title: "Latest",
   },
+  {
+    path: "/best",
+    title: "The Bests",
+  },
 ];
 
-export default function Header({}: Props) {
+export default function Header() {
   return (
     <Grid
       container
       justifyContent="space-between"
       alignItems="center"
-      bgcolor="rgba(0,0,0,0.5)"
+      bgcolor="rgba(0,0,0,0.7)"
       sx={{
-        position: "sticky",
-        top : "0",
+        position: "fixed",
+        top: "0",
         py: "10px",
         px: "35px",
         "& p , span": {
           fontFamily: "Montserrat",
         },
+        backdropFilter: "blur(4px)",
       }}
     >
       <Grid item>
@@ -51,7 +55,9 @@ export default function Header({}: Props) {
         <DesktopMenu menuData={menu} />
         <MobileMenu menuData={menu} />
       </Grid>
-      <Grid item></Grid>
+      <Grid item display={{ xs: "none", md: "block" }}>
+        <Search />
+      </Grid>
     </Grid>
   );
 }

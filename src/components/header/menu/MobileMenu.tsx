@@ -1,6 +1,6 @@
 // React
 import React from "react";
-import { IMenu } from "providers/types";
+import { IMenu } from "src/providers/types";
 // Components
 import { Grid } from "@mui/material";
 
@@ -9,5 +9,9 @@ interface Props {
 }
 
 export default function MobileMenu({ menuData }: Props) {
-  return <Grid container></Grid>;
+  return (
+    <Grid container display={{ xs: "flex", md: "none" }}>
+      mobile Menu
+    </Grid>
+  );
 }
